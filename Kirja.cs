@@ -15,8 +15,9 @@ public class Kirja
         this.Genre = genre;
     }
 
-    public static void LisääKirja(List<Kirja> listaKirjoista, Kirja uusiKirja)
+    public static void LisääKirja(List<Kirja> kirjalista, Kirja uusiKirja)
     {
-        listaKirjoista.Add(uusiKirja);
+        kirjalista.Add(uusiKirja);
     }
+
 }
