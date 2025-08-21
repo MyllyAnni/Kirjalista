@@ -20,4 +20,11 @@ public class Kirja
         kirjalista.Add(uusiKirja);
     }
 
+    public static void TulostaKirjalista(List<Kirja> kirjalista)
+    {
+        foreach (Kirja kirja in kirjalista)
+        {
+            Console.WriteLine($"{kirja.Nimi}, {kirja.Kirjoittaja}, {kirja.Vuosi}, {kirja.Genre}");
+        }
+    }
 }
