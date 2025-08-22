@@ -27,4 +27,10 @@ public class Kirja
             Console.WriteLine($"{kirja.Nimi}, {kirja.Kirjoittaja}, {kirja.Vuosi}, {kirja.Genre}");
         }
     }
+
+    public static void PoistaKirja(List<Kirja> kirjalista, Kirja poistettavaKirja)
+    {
+        kirjalista.Remove(poistettavaKirja);
+        Console.WriteLine("Kirja poistettu!");
+    }
 }

@@ -8,7 +8,11 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("Tervetuloa! Mitä haluat tehdä? Lisää kirja, paina L. Tulosta lista, paina T. Tyhjä lopettaa.");
+            Console.WriteLine("Tervetuloa! Mitä haluat tehdä?");
+            Console.WriteLine("Lisää kirja, paina L.");
+            Console.WriteLine("Tulosta lista, paina T.");
+            Console.WriteLine("Poista kirja, paina P");
+            Console.WriteLine("Tyhjä lopettaa.");
             string valinta = Console.ReadLine() ?? "";
 
             if (valinta == "L")
@@ -34,6 +38,24 @@ class Program
             else if (valinta == "T")
             {
                 Kirja.TulostaKirjalista(kirjalista);
+            }
+
+            else if (valinta == "P")
+            {
+                Console.WriteLine("Anna poistettavan kirjan nimi.");
+                string poistettavaKirja = Console.ReadLine() ?? "";
+
+                Kirja? poistettavaOlio = kirjalista.Find(k => k.Nimi == poistettavaKirja);
+
+                if (poistettavaOlio != null)
+                {
+                    Kirja.PoistaKirja(kirjalista, poistettavaOlio);
+                }
+
+                else
+                {
+                    Console.WriteLine("Kirjaa ei löytynyt.");
+                }
             }
 
             else
