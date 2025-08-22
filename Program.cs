@@ -12,7 +12,8 @@ class Program
             Console.WriteLine("Lisää kirja, paina L.");
             Console.WriteLine("Tulosta lista, paina T.");
             Console.WriteLine("Poista kirja, paina P");
-            Console.WriteLine("Hae genren mukaan, paina G");
+            Console.WriteLine("Tulosta genren mukaan, paina G");
+            Console.WriteLine("Hae kirjaa, paina K");
             Console.WriteLine("Tyhjä lopettaa.");
             string valinta = Console.ReadLine() ?? "";
 
@@ -63,7 +64,14 @@ class Program
             {
                 Console.WriteLine("Kirjoita genre.");
                 string genre = Console.ReadLine() ?? "";
-                Kirja.HaeGenrenMukaan(kirjalista, genre);
+                Kirja.TulostaGenrenMukaan(kirjalista, genre);
+            }
+
+            else if (valinta == "K")
+            {
+                Console.WriteLine("Kirjoita kirjan nimi tai kirjailijan nimi.");
+                string haku = Console.ReadLine() ?? "";
+                Kirja.HaeKirjaa(kirjalista, haku);
             }
 
             else
