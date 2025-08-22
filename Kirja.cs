@@ -34,15 +34,26 @@ public class Kirja
         Console.WriteLine("Kirja poistettu!");
     }
 
-    public static void HaeGenrenMukaan(List<Kirja> kirjalista, string genre)
+    public static void TulostaGenrenMukaan(List<Kirja> kirjalista, string genre)
     {
         foreach (Kirja kirja in kirjalista)
         {
             if (kirja.Genre == genre)
             {
-            
+
                 Console.WriteLine($"{kirja.Nimi}, {kirja.Kirjoittaja}, {kirja.Vuosi}, {kirja.Genre}");
-                
+
+            }
+        }
+    }
+
+    public static void HaeKirjaa(List<Kirja> kirjalista, string haku)
+    {
+        foreach (Kirja kirja in kirjalista)
+        {
+            if (kirja.Nimi == haku || kirja.Kirjoittaja == haku)
+            {
+                Console.WriteLine($"{kirja.Nimi}, {kirja.Kirjoittaja}, {kirja.Vuosi}, {kirja.Genre}");
             }
         }
     }
