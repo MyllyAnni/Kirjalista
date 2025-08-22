@@ -15,9 +15,9 @@ public class Kirja
         this.Genre = genre;
     }
 
-    public static void LisääKirja(List<Kirja> listaKirjoista, Kirja uusiKirja)
+    public static void LisääKirja(List<Kirja> kirjalista, Kirja uusiKirja)
     {
-        listaKirjoista.Add(uusiKirja);
+        kirjalista.Add(uusiKirja);
     }
 
     public static void TulostaKirjalista(List<Kirja> kirjalista)
@@ -26,5 +26,11 @@ public class Kirja
         {
             Console.WriteLine($"{kirja.Nimi}, {kirja.Kirjoittaja}, {kirja.Vuosi}, {kirja.Genre}");
         }
+    }
+
+    public static void PoistaKirja(List<Kirja> kirjalista, Kirja poistettavaKirja)
+    {
+        kirjalista.Remove(poistettavaKirja);
+        Console.WriteLine("Kirja poistettu!");
     }
 }
