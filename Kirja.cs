@@ -33,4 +33,17 @@ public class Kirja
         kirjalista.Remove(poistettavaKirja);
         Console.WriteLine("Kirja poistettu!");
     }
+
+    public static void HaeGenrenMukaan(List<Kirja> kirjalista, string genre)
+    {
+        foreach (Kirja kirja in kirjalista)
+        {
+            if (kirja.Genre == genre)
+            {
+            
+                Console.WriteLine($"{kirja.Nimi}, {kirja.Kirjoittaja}, {kirja.Vuosi}, {kirja.Genre}");
+                
+            }
+        }
+    }
 }
